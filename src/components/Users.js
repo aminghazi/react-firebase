@@ -12,29 +12,30 @@ export default function Users() {
         }
     ])
     const [userId, setUserId] = useState("")
-    const [userData, setUserData] = useState(false)
+    const [userData, setUserData] = useState("")
+    const [getData, setGetData] = useState(false)
     const [showDeleteModal, setShowDeleteModal] = useState(false)
     const [showEditModal, setShowEditModal] = useState(false)
 
     
     // useEffect(() => {
         // async function fetchData() {
-        //     await fetch('firbaseurl/users.json')
+        //     await fetch('firebaseurl/users.json')
         //         .then(res => res.json)
         //         .then(data => {
         //             setUsers(Object.entries(data))
         //         })
         // }
         // fetchData()
-        // }, [userData])
+    // }, [getData])
         
         const removeHandler = async () => {
-            // await fetch(`firbaseurl/users/${userId}.json`, {
+            // await fetch(`firebaseurl/users/${userId}.json`, {
             //     method: 'DELETE',
             // }).then(res => console.log(res))
     
             setShowDeleteModal(false)
-            setUserData(prev => !prev)
+            setGetData(prev => !prev)
         }
     
         return (
@@ -89,7 +90,8 @@ export default function Users() {
                     </div>
                     </>
                 )}
-            </div>
+                </div>
+                
         </>
     )
 }
